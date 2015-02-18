@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZB4-Fv-SkT" userLabel="Video Preview">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zl0-Sl-e1b" userLabel="Time Elapsed">
+                                <rect key="frame" x="228" y="28" width="144" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="CaT-Lh-2QT"/>
+                                    <constraint firstAttribute="height" constant="34" id="Ey5-v9-tmF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMM-Fa-hRU" userLabel="Overlay for Button">
+                                <rect key="frame" x="0.0" y="510" width="600" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="APF-Cs-dU7"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Yc-IZ-Pec" userLabel="Record Button">
+                                <rect key="frame" x="266" y="522" width="68" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="8fq-dZ-AIo"/>
+                                    <constraint firstAttribute="height" constant="68" id="cdD-8E-z0i"/>
+                                </constraints>
+                                <state key="normal" image="btn-record.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dEW-gm-PKQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29J-sa-vL1">
+                                <rect key="frame" x="26" y="82" width="548" height="328"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tMM-Fa-hRU" secondAttribute="trailing" constant="-16" id="1mT-10-t7d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="29J-sa-vL1" secondAttribute="trailing" constant="10" id="6Gb-sb-ScA"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="tMM-Fa-hRU" secondAttribute="bottom" id="8Fb-8l-frm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Yc-IZ-Pec" secondAttribute="bottom" constant="10" id="C40-uC-M3T"/>
+                            <constraint firstAttribute="centerX" secondItem="2Yc-IZ-Pec" secondAttribute="centerX" id="CNj-99-m2T"/>
+                            <constraint firstItem="29J-sa-vL1" firstAttribute="top" secondItem="zl0-Sl-e1b" secondAttribute="bottom" constant="20" id="DfZ-5c-9Z5"/>
+                            <constraint firstItem="tMM-Fa-hRU" firstAttribute="top" secondItem="29J-sa-vL1" secondAttribute="bottom" constant="100" id="MFY-sN-xSx"/>
+                            <constraint firstItem="ZB4-Fv-SkT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="N0T-vE-0Ke"/>
+                            <constraint firstItem="zl0-Sl-e1b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Ogs-c3-Jpo"/>
+                            <constraint firstItem="tMM-Fa-hRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="TDn-RG-RDt"/>
+                            <constraint firstItem="29J-sa-vL1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="TQB-3F-YST"/>
+                            <constraint firstItem="ZB4-Fv-SkT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="UBj-oM-DmQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZB4-Fv-SkT" secondAttribute="bottom" id="WBf-qT-tcq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZB4-Fv-SkT" secondAttribute="trailing" constant="-16" id="sG0-K6-7rM"/>
+                            <constraint firstAttribute="centerX" secondItem="zl0-Sl-e1b" secondAttribute="centerX" id="vrX-Df-Xbd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnStartRecording" destination="2Yc-IZ-Pec" id="Mgo-MM-ROL"/>
+                        <outlet property="elapsedTimeLabel" destination="zl0-Sl-e1b" id="sfv-76-eDi"/>
+                        <outlet property="transcriptionLabel" destination="29J-sa-vL1" id="wIG-d0-78k"/>
+                        <outlet property="videoPreviewView" destination="ZB4-Fv-SkT" id="Yeb-sH-4dB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="343" y="403"/>
+        </scene>
+        <!--Video Preview View Controller-->
+        <scene sceneID="kjO-pQ-2Ko">
+            <objects>
+                <viewController storyboardIdentifier="videoPreviewViewController" id="cWL-Ot-ue3" customClass="VideoPreviewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lxY-QW-CJe"/>
+                        <viewControllerLayoutGuide type="bottom" id="4E2-4l-mu2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vOO-wS-Ueo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQP-af-jiq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1054" y="403"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn-record.png" width="68" height="68"/>
+    </resources>
+</document>

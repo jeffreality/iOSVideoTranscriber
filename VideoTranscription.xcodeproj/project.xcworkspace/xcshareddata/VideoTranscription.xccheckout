@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A7BB3066-2284-484C-B7DF-D0DEF8E4C947</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VideoTranscription</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DC58A1A601BB1C411BEA4E0E0B341AFAE92F44CF</key>
+		<string>https://github.com/jeffreality/iOSVideoTranscriber.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VideoTranscription.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DC58A1A601BB1C411BEA4E0E0B341AFAE92F44CF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jeffreality/iOSVideoTranscriber.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DC58A1A601BB1C411BEA4E0E0B341AFAE92F44CF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DC58A1A601BB1C411BEA4E0E0B341AFAE92F44CF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSVideoTranscriber</string>
+		</dict>
+	</array>
+</dict>
+</plist>
