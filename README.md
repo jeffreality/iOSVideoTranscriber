@@ -35,13 +35,13 @@ To turn on transcription, set:
 
     #define ENABLE_TRANSCRIPTION            1
 
-This will generate the transcribed (spoken) text when the recording is stopped.  However, this will disable the video from being recorded.
+This will generate the transcribed (spoken) text when the recording is stopped.  However, this will disable the audio from being recorded.
 
 To turn it off:
 
     #define ENABLE_TRANSCRIPTION            0
 
-This will turn off transcribing, but will record the video (completion of the recording will pop up the video preview).
+This will turn off transcribing, but will save the audio as well as the video.
 
-I am trying to find out how to get these functions to play together nicely.
+I am trying to find out how to get these functions to work concurrently (both save the audio and transcribe it).
 
