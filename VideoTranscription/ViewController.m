@@ -35,8 +35,6 @@
 #define MAX_SECONDS_FOR_VIDEO           15.0f
 #define CAPTURE_FRAMES_PER_SECOND       30.0f
 
-#define ENABLE_TRANSCRIPTION            1
-
 @implementation ViewController
 
 const unsigned char SpeechKitApplicationKey[] = {
@@ -46,13 +44,11 @@ const unsigned char SpeechKitApplicationKey[] = {
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-#if ENABLE_TRANSCRIPTION
     [SpeechKit setupWithID:NUANCE_REPLACE_WITH_ID
                       host:NUANCE_REPLACE_WITH_HOST
                       port:443
                     useSSL:NO
                   delegate:self];
-#endif
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -188,10 +184,6 @@ const unsigned char SpeechKitApplicationKey[] = {
     if ([_session canSetSessionPreset:AVCaptureSessionPreset640x480]) //Check size based configs are supported before setting them
         [_session setSessionPreset:AVCaptureSessionPreset640x480];
     
-#if ENABLE_TRANSCRIPTION
-    [[self.session.outputs[1] connectionWithMediaType:AVMediaTypeAudio] setEnabled:NO];
-#endif
-    
     [_session startRunning];
     
 }
@@ -210,12 +202,10 @@ const unsigned char SpeechKitApplicationKey[] = {
                                                       userInfo:nil
                                                        repeats:YES];
         
-#if ENABLE_TRANSCRIPTION
         voiceSearch = [[SKRecognizer alloc] initWithType:SKDictationRecognizerType
                                                detection:SKLongEndOfSpeechDetection
                                                 language:@"en_US"
                                                 delegate:self];
-#endif
         
         [btn setImage:[UIImage imageNamed:@"btn-stop.png"] forState:UIControlStateNormal];
         
@@ -242,9 +232,7 @@ const unsigned char SpeechKitApplicationKey[] = {
         [elapsedTimer invalidate];
         
         [movieFileOutput stopRecording];
-#if ENABLE_TRANSCRIPTION
         [voiceSearch stopRecording];
-#endif
         
         [[[UIAlertView alloc] initWithTitle:@"Video Recorded" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Re-Record", @"Done", nil] show];
         
@@ -292,6 +280,8 @@ const unsigned char SpeechKitApplicationKey[] = {
         //save outputFileURL
         AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
         appDelegate.videoURL = outputFileURL;
+        
+        [[self.session.outputs[1] connectionWithMediaType:AVMediaTypeAudio] setEnabled:YES];
     }
 }
 
@@ -304,6 +294,8 @@ const unsigned char SpeechKitApplicationKey[] = {
 
 - (void) recognizerDidFinishRecording:(SKRecognizer *)recognizer {
     NSLog(@"Recording finished.");
+    
+    [[self.session.outputs[1] connectionWithMediaType:AVMediaTypeAudio] setEnabled:NO];
 }
 
 - (void) recognizer:(SKRecognizer *)recognizer didFinishWithResults:(SKRecognition *)results {

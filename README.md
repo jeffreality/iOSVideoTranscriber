@@ -1,11 +1,11 @@
 # iOSVideoTranscriber
 iOS Video Recorder/Transcriber
 
-This app supports recording video (limited to a configurable 15 seconds).  When the video is recorded, the audio is transcribed (via Nuance SpeechKit).
+This app records video (limited to a (configurable) 15 seconds).  When the video is recorded, the audio is transcribed (via Nuance SpeechKit).
 
-##Initial Setup (just to get this to compile)
+##Initial Setup (to get this to compile)
 
-To get this to work, you must get a key from Nuance:
+To get this to work, you must first get a key from Nuance:
 
 http://dragonmobile.nuancemobiledeveloper.com//public/index.php?task=register
 
@@ -28,20 +28,3 @@ And then add them to the ViewController.m file:
                   delegate:self];
 
 (replace NUANCE_REPLACE_WITH_ID and NUANCE_REPLACE_WITH_HOST based on the values generated for you by Nuance)
-
-## Current Problems
-
-To turn on transcription, set:
-
-    #define ENABLE_TRANSCRIPTION            1
-
-This will generate the transcribed (spoken) text when the recording is stopped.  However, this will disable the audio from being recorded.
-
-To turn it off:
-
-    #define ENABLE_TRANSCRIPTION            0
-
-This will turn off transcribing, but will save the audio as well as the video.
-
-I am trying to find out how to get these functions to work concurrently (both save the audio and transcribe it).
-
