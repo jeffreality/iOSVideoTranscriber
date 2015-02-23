@@ -43,6 +43,18 @@ const unsigned char SpeechKitApplicationKey[] = {
     NUANCE_APP_KEY
 };
 
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    
+#if ENABLE_TRANSCRIPTION
+    [SpeechKit setupWithID:NUANCE_REPLACE_WITH_ID
+                      host:NUANCE_REPLACE_WITH_HOST
+                      port:443
+                    useSSL:NO
+                  delegate:self];
+#endif
+}
+
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -72,14 +84,6 @@ const unsigned char SpeechKitApplicationKey[] = {
     [self setupCaptureSession];
     elapsedTime = -0.5f;
     [self updateElapsedTime];
-    
-#if ENABLE_TRANSCRIPTION
-    [SpeechKit setupWithID:NUANCE_REPLACE_WITH_ID
-                      host:NUANCE_REPLACE_WITH_HOST
-                      port:443
-                    useSSL:NO
-                  delegate:self];
-#endif
     
 }
 
@@ -183,6 +187,10 @@ const unsigned char SpeechKitApplicationKey[] = {
     
     if ([_session canSetSessionPreset:AVCaptureSessionPreset640x480]) //Check size based configs are supported before setting them
         [_session setSessionPreset:AVCaptureSessionPreset640x480];
+    
+#if ENABLE_TRANSCRIPTION
+    [[self.session.outputs[1] connectionWithMediaType:AVMediaTypeAudio] setEnabled:NO];
+#endif
     
     [_session startRunning];
     
